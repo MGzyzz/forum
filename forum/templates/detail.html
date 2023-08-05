@@ -4,7 +4,7 @@
     <h3 class="text-dark">{{ theme.title }} <span class="ms-5 me-5">{{ theme.time_of_create }}</span> {{ theme.user }}</h3>
     <hr>
     <section style="background-color: white;">
-
+    <h1>Description: {{ theme.description }}</h1>
   <div class="container my-5 py-5">
     <div class="row d-flex">
       <div class="col-md-12 col-lg-10">
@@ -33,13 +33,12 @@
             <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
                                 {% for comment in comments %}
                                     <div class="card-body p-4">
-
             <div class="d-flex flex-start mt-5">
               <img class="rounded-circle shadow-1-strong me-3 ms-3"
                 src="{{ comment.user.profile.avatar.url }}" alt="avatar" width="60"
                 height="60" />
               <div>
-                <h6 class="fw-bold mb-1">{{ theme.user.username }}</h6>
+                <h6 class="fw-bold mb-1">{{ comment.user.username }}</h6>
                 <div class="d-flex align-items-center mb-3">
                   <p class="mb-0">
                       {{ comment.created_at }}
