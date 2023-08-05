@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1 class="text-center">Theme</h1>
+
+    {% for theme in themes %}
+        <hr>
+<a href="{% url 'detail' theme.id %}" class="text-decoration-none text-dark">
+    <div class="d-flex justify-content-between">
+        <span class="mr-3">{{ theme.title }}</span>
+        <span class="mr-3">{{ theme.time_of_create }}</span>
+        <span class="mr-3">{{ theme.user }}</span>
+        <span>{{ theme.count_answer }}</span>
+    </div>
+</a>    {% endfor %}
+    <div class="mt-5">        {% include 'partial/pagination.html' %}
+</div>
+
+{% endblock %}
