@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Profile</h1>
+    <hr>
+    <h3>Name: {{ user.username }}</h3>
+    <h3>First_name: {% if user.first_name  %} {{ user.first_name }} {% else %} None {% endif %}</h3>
+    <h3>Last_name: {% if user.last_name  %} {{ user.last_name }} {% else %} None {% endif %}</h3>
+    <h3>Email: {% if user.email  %} {{ user.email }} {% else %} None {% endif %}</h3>
+    <hr>
+              <div>
+                  <a href="{% url 'user_detail' user.id %}"><img class="rounded-circle shadow-1-strong me-3 ms-3"
+                src="{{ user.profile.avatar.url }}" alt="avatar" width="150"
+                height="150" /></a>
+              </div>
+{% endblock %}

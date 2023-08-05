@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <h1 class="my-4 text-center">Login</h1>
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'login' %}?next={{ request.GET.next }}" method="post">
+        {% csrf_token %}
+        {% include 'partial/forms.html' with text_button='Login' %}
+    </form>
+{% endblock %}
